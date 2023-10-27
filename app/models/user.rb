@@ -13,7 +13,7 @@ class User < ApplicationRecord
       file_path = Rails.root.join('app/assts/images/sample-author1.jpg')
       profile_image.attadh(io: File.open(file_path), filename: 'default-image.jpg', content_typ: 'image/jpeg')
     end
-  profile_image.variant(resize_to_limit: [100,100]).processed
+  profile_image.variant(resize_to_limit: [width,height]).processed
   end
   
 end
