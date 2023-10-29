@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   #get 'post_images/index'
   #get 'post_images/show'
   resources :post_images, only: [:new, :create, :index, :show, :destroy] do
+    resource :favorites, only: [:create, :destroy]
     resources :post_comments, only: [:create, :destroy]
   end
   
